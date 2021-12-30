@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from "react-redux";
+import { store, persistor } from "./redux/store/index";
+import { Router } from "@reach/router"
+import OnRouteChange from "reach-router-scroll-top";
 
-function App() {
+import LandingPage from './pages/LandingPage';
+import QuotesPage from './pages/QuotesPage';
+import AuthorsPage from './pages/AuthorsPage';
+
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <div className="bg-slate-100">
+          <Router>
+            <LandingPage path="/" />
+            <QuotesPage path="/quotes" />
+            <QuotesPage path="/quotes/:page" />
+
+            <AuthorsPage path="/authors" />
+            <AuthorsPage path="/authors/:page" />
+          </Router>
+        </div>
+        <OnRouteChange />
+      </PersistGate>
+    </Provider>
   );
 }
 

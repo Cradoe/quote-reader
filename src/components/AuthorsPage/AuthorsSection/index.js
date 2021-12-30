@@ -32,14 +32,14 @@ const AuthorsSection = ( { currentPage } ) => {
             },
             fetchDataFromServer = () => {
                 setIsFetching( true );
-                listAuthorsModel( callback )
+                console.log( "fetching" );
+                listAuthorsModel( callback, currentPage )
             };
 
 
-        if ( !authors || authors.length === 0 ) {
-            fetchDataFromServer();
-        }
-    }, [ authors, isFetching ] )
+        fetchDataFromServer();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [ currentPage ] )
 
     return (
         <>

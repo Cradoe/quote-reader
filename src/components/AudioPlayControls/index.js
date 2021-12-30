@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import AudioPlayerButton from "../AudioPlayerButton";
 import LoadAudioButton from "../LoadAudioButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createScriptModel } from "../../models/createScriptModel";
 import { createSpeechModel } from "../../models/createSpeechModel";
+import { masteringAudioModel } from "../../models/masteringAudioModel";
 
 
 
@@ -13,17 +14,14 @@ import { createSpeechModel } from "../../models/createSpeechModel";
 
 const AudioPlayControls = ( { content, id: quoteId } ) => {
 
-    const [ loadedAudio, setLoadedAudio ] = useState( null ),
+    const createdScripts = useSelector( state => state.audio && state.audio.scripts ? state.audio.scripts : null ),
+        [ loadedAudio, setLoadedAudio ] = useState( null ),
         [ scriptId, setScriptId ] = useState( null ),
-        [ hasCreatedSpeech, setHasCreatedSpeech ] = useState( false );
+        [ speech, setSpeech ] = useState( null );
 
 
 
     const dispatch = useDispatch();
-
-    const convertTextToSpeech = () => {
-        createScript()
-    };
 
     const createScript = () => {
         const
@@ -37,21 +35,27 @@ const AudioPlayControls = ( { content, id: quoteId } ) => {
                 success: successCallback,
                 error: errorCallback,
             };
-        console.log( "content", content );
         dispatch( createScriptModel( { content, quoteId }, callback ) );
 
     }
     const createAndLoadAudio = () => {
-        convertTextToSpeech();
+        if ( createdScripts && createdScripts.length > 0 ) {
+            const script = createdScripts.find( script => script.quoteId === quoteId );
+            if ( script ) {
+                setScriptId( script.scriptId );
+                return;
+            }
+        }
+
+        createScript()
     }
 
 
     useEffect( () => {
-        if ( scriptId && !hasCreatedSpeech ) {
+        if ( scriptId && !speech ) {
             const
                 successCallback = ( data ) => {
-                    setHasCreatedSpeech( true );
-                    setLoadedAudio( data.default.url );
+                    setSpeech( data.default );
                 },
                 errorCallback = ( error ) => {
                     alert( error );
@@ -63,7 +67,27 @@ const AudioPlayControls = ( { content, id: quoteId } ) => {
             createSpeechModel( scriptId, callback );
 
         }
-    }, [ scriptId, hasCreatedSpeech ] )
+    }, [ scriptId, speech ] );
+
+    useEffect( () => {
+        if ( speech && !loadedAudio ) {
+            const
+                successCallback = ( data ) => {
+                    console.log( " data.url", data.url );
+                    setLoadedAudio( data.url );
+                },
+                errorCallback = ( error ) => {
+                    alert( error );
+                },
+                callback = {
+                    success: successCallback,
+                    error: errorCallback,
+                };
+            masteringAudioModel( scriptId, callback );
+
+        }
+    }, [ speech, loadedAudio, scriptId ] );
+
     return (
         <>
             {loadedAudio ?

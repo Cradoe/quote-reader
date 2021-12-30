@@ -12,7 +12,7 @@ const QuotesSection = ( { currentPage } ) => {
 
     const quotes = useSelector( state => state.quote ),
         [ isFetching, setIsFetching ] = useState( false ),
-        [ shortlistedQuotes, setShortlistedQuotes ] = useState( [] );
+        [ shuffledQuotes, setShuffledQuotes ] = useState( [] );
 
 
     const dispatch = useDispatch();
@@ -21,29 +21,15 @@ const QuotesSection = ( { currentPage } ) => {
     useEffect( () => {
 
         const
-            shuffleAndSelectSix = () => {
-                setShortlistedQuotes( shuffleArray( quotes.items ) );
-            },
-            successCallback = () => {
-
-                setIsFetching( false );
-            },
-            errorCallback = ( error ) => {
-                setIsFetching( false );
-                alert( error );
-            },
-            callback = {
-                success: successCallback,
-                error: errorCallback,
-            },
             fetchDataFromServer = () => {
                 setIsFetching( true );
-                dispatch( listQuotesModel( callback, currentPage ) )
+                dispatch( listQuotesModel( currentPage ) )
             };
         if ( !quotes || !quotes.items || quotes.items.length === 0 || quotes.page !== currentPage ) {
             fetchDataFromServer();
         } else {
-            shuffleAndSelectSix();
+            setIsFetching( false );
+            setShuffledQuotes( shuffleArray( quotes.items ) );
         }
     }, [ quotes, isFetching, currentPage, dispatch ] )
 
@@ -56,7 +42,7 @@ const QuotesSection = ( { currentPage } ) => {
                 <>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
                         {
-                            shortlistedQuotes.map( ( quote, index ) => (
+                            shuffledQuotes.map( ( quote, index ) => (
                                 <QuoteItemCard quote={quote} key={index} />
                             ) )
                         }

@@ -12,7 +12,7 @@ const setQuoteList = ( payload ) => {
 };
 
 
-export const listQuotesModel = ( callback = {}, page = 1 ) => {
+export const listQuotesModel = ( page = 1 ) => {
     return async ( dispatch ) => {
         try {
             const response = await axios.get( quoteApiService.LIST_QUOTES( page ) );

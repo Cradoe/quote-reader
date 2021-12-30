@@ -23,22 +23,11 @@ const RandomQuotes = () => {
             shuffleAndSelectSix = () => {
                 const shuffledQuotes = shuffleArray( quotes.items );
                 setShortlistedQuotes( shuffledQuotes.slice( 0, 6 ) );
-            },
-            successCallback = () => {
-
                 setIsFetching( false );
-            },
-            errorCallback = ( error ) => {
-                setIsFetching( false );
-                alert( error );
-            },
-            callback = {
-                success: successCallback,
-                error: errorCallback,
             },
             fetchDataFromServer = () => {
                 setIsFetching( true );
-                dispatch( listQuotesModel( callback ) )
+                dispatch( listQuotesModel() )
             };
 
 

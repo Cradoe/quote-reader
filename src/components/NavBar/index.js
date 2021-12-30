@@ -26,11 +26,13 @@ export default function NavBar () {
                             <div className="flex-1 flex items-center justify-center">
                                 <div className="flex-shrink-0 flex items-center basis-1/4">
 
-                                    <img
-                                        className="h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                                        alt="Workflow"
-                                    />
+                                    <Link to="/">
+                                        <img
+                                            className="h-8 w-auto"
+                                            src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                                            alt="Workflow"
+                                        />
+                                    </Link>
                                 </div>
                                 <div className="hidden sm:block sm:ml-6 basis-1/2">
                                     <div className="flex space-x-4">

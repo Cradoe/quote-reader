@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Helmet } from "react-helmet";
 import NavBar from "../../components/NavBar";
 import QuotesSection from "../../components/QuotesPage/QuotesSection";
 
@@ -9,6 +10,9 @@ const QuotesPage = ( { page } ) => {
 
     return (
         <>
+            <Helmet>
+                <title>All Quotes | QuoteReader</title>
+            </Helmet>
             <NavBar />
             <div className="container mx-auto px-4 py-10">
                 <div className="flex flex-row justify-center items-center gap-2  mb-10">

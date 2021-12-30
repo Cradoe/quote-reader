@@ -18,6 +18,7 @@ const Header = () => {
                                 <span className="sr-only">Logo</span>
                                 <img
                                     className="h-8 w-auto sm:h-10"
+                                    alt="Logo"
                                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                                 />
                             </Link>

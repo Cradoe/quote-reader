@@ -2,12 +2,13 @@ import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from '@reach/router'
 import { navigationRoutes } from '../../utils/common'
+import { logoWhite } from '../../utils/sharedAssets'
 
 
 export default function NavBar () {
 
     return (
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-indigo-800">
             {( { open } ) => (
                 <>
                     <div className=" mx-auto px-2 sm:px-6 lg:px-8 ">
@@ -23,15 +24,19 @@ export default function NavBar () {
                                     )}
                                 </Disclosure.Button>
                             </div>
+
                             <div className="flex-1 flex items-center justify-center">
                                 <div className="flex-shrink-0 flex items-center basis-1/4">
 
                                     <Link to="/">
-                                        <img
-                                            className="h-8 w-auto"
-                                            src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                                            alt="Workflow"
-                                        />
+                                        <div className="flex flex-row items-center">
+                                            <img
+                                                className="h-8 w-auto sm:h-10"
+                                                alt="Logo"
+                                                src={logoWhite}
+                                            />
+                                            <h2 className="relative -left-3 text-white">uoteReader</h2>
+                                        </div>
                                     </Link>
                                 </div>
                                 <div className="hidden sm:block sm:ml-6 basis-1/2">

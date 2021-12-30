@@ -1,6 +1,6 @@
 import { Link } from "@reach/router";
 import React from "react";
-import Zoom from 'react-reveal/Zoom';
+import { Zoom } from 'react-awesome-reveal';
 import { globalConstants } from "../../../constants/global";
 import { homeHeroImg } from "../../../utils/sharedAssets";
 import HomeHeader from "../HomeHeader";

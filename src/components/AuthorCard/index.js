@@ -1,8 +1,8 @@
 
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 const AuthorCard = ( { author } ) => {
     return (
-        <Fade bottom>
+        <Fade direction="bottom">
             <div className="shadow  hover:shadow-xl ease-in-out delay-100 bg-white rounded-xl p-4">
                 <div className="font-sans">
                     <div className="flex flex-col justify-around items-center h-full bg-slate-100 rounded-xl p-1 gap-2">

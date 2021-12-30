@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 import HeroSection from "../../components/LandingPage/HeroSection";
 import RandomQuotesSection from "../../components/LandingPage/RandomQuotesSection";
 import RandomAuthorsSection from "../../components/LandingPage/RandomAuthorsSection";
@@ -16,13 +16,13 @@ const LandingPage = () => {
             </Helmet>
 
             <HeroSection />
-            <Fade bottom>
+            <Fade direction="bottom">
                 <RandomQuotesSection />
             </Fade>
-            <Fade bottom>
+            <Fade direction="bottom">
                 <RandomAuthorsSection />
             </Fade>
-            <Fade bottom>
+            <Fade direction="bottom">
                 <TagSection />
             </Fade>
         </>

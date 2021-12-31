@@ -3,6 +3,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import NavBar from "../../components/NavBar";
 import AuthorsSection from "../../components/AuthorsPage/AuthorsSection";
+import Footer from "../../components/Footer";
 
 const AuthorsPage = ( { page } ) => {
 
@@ -20,6 +21,7 @@ const AuthorsPage = ( { page } ) => {
                 </div>
                 <AuthorsSection currentPage={currentPage} />
             </div>
+            <Footer />
         </>
     )
 }

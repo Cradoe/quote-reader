@@ -5,7 +5,6 @@ import loadable from '@loadable/component';
 import { store, persistor } from "./redux/store/index";
 import { Router } from "@reach/router"
 import OnRouteChange from "reach-router-scroll-top";
-import Footer from './components/Footer';
 
 const LandingPage = loadable( () => import( './pages/LandingPage' ) );
 const QuotesPage = loadable( () => import( './pages/QuotesPage' ) );
@@ -24,7 +23,6 @@ function App () {
             <AuthorsPage path="/authors" />
             <AuthorsPage path="/authors/:page" />
           </Router>
-          <Footer />
         </div>
         <OnRouteChange />
       </PersistGate>

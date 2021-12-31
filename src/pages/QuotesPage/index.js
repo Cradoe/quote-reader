@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Helmet } from "react-helmet";
+import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import QuotesSection from "../../components/QuotesPage/QuotesSection";
 
@@ -20,6 +21,7 @@ const QuotesPage = ( { page } ) => {
                 </div>
                 <QuotesSection currentPage={currentPage} />
             </div>
+            <Footer />
         </>
     )
 }

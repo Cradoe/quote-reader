@@ -5,6 +5,7 @@ import HeroSection from "../../components/LandingPage/HeroSection";
 import RandomQuotesSection from "../../components/LandingPage/RandomQuotesSection";
 import RandomAuthorsSection from "../../components/LandingPage/RandomAuthorsSection";
 import TagSection from "../../components/LandingPage/TagSection";
+import Footer from "../../components/Footer";
 
 
 
@@ -25,6 +26,7 @@ const LandingPage = () => {
             <Fade direction="bottom">
                 <TagSection />
             </Fade>
+            <Footer />
         </>
     )
 }

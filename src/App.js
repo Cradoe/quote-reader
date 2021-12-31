@@ -1,12 +1,15 @@
+import React from 'react';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from "react-redux";
+import loadable from '@loadable/component';
 import { store, persistor } from "./redux/store/index";
 import { Router } from "@reach/router"
 import OnRouteChange from "reach-router-scroll-top";
+import Footer from './components/Footer';
 
-import LandingPage from './pages/LandingPage';
-import QuotesPage from './pages/QuotesPage';
-import AuthorsPage from './pages/AuthorsPage';
+const LandingPage = loadable( () => import( './pages/LandingPage' ) );
+const QuotesPage = loadable( () => import( './pages/QuotesPage' ) );
+const AuthorsPage = loadable( () => import( './pages/AuthorsPage' ) );
 
 function App () {
   return (
@@ -21,6 +24,7 @@ function App () {
             <AuthorsPage path="/authors" />
             <AuthorsPage path="/authors/:page" />
           </Router>
+          <Footer />
         </div>
         <OnRouteChange />
       </PersistGate>

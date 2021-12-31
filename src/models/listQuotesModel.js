@@ -29,7 +29,7 @@ export const listQuotesModel = ( page = 1 ) => {
             }
 
         } catch ( error ) {
-            handleApiResponseError( error.response )
+            handleApiResponseError( "Something went wrong, could't load quotes" );
         }
 
     }

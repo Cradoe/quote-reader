@@ -17,7 +17,7 @@ export const listTagsModel = async ( callback = {} ) => {
         }
 
     } catch ( error ) {
-        handleApiResponseError( error.response )
+        handleApiResponseError( "Something went wrong, could't load tags" );
     }
 
 }

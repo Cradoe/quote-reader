@@ -5,10 +5,6 @@ export const catchApiRequestError = ( error ) => {
   // console.log( error );
   return "Opps! The server has encountered a temporary error.";
 };
-export const handleApiResponseError = ( response ) => {
-  if ( response && response.message ) {
-    return response.message;
-  }
-  // console.log( response );
-  return "Opps! The server has encountered a temporary error.";
+export const handleApiResponseError = ( message ) => {
+  alert( message );
 };

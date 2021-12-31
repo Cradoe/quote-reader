@@ -37,8 +37,8 @@ export const createScriptModel = ( { content, quoteId }, callback = {} ) => {
 
 
         } catch ( error ) {
-            console.log( "error", error );
-            handleApiResponseError( error.response )
+            // console.log( "error", error );
+            handleApiResponseError( "Something went wrong, could't create script" );
         }
 
     }

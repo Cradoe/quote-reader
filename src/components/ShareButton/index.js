@@ -30,7 +30,6 @@ export default function ShareButton ( { content } ) {
                                 <a
                                     target="_blank"
                                     rel="noreferrer"
-                                    role='share to whatsapp'
                                     aria-label="share to whatsapp"
                                     href={`whatsapp://send?text=${content}`}
                                     className={classNames(
@@ -50,7 +49,6 @@ export default function ShareButton ( { content } ) {
                                 <a
                                     target="_blank"
                                     rel="noreferrer"
-                                    role='share to whatsapp'
                                     aria-label="share to whatsapp"
                                     href={`https://web.whatsapp.com/send?text=${content}`}
                                     className={classNames(

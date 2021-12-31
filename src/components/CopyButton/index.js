@@ -55,7 +55,7 @@ const CopyButton = ( { quote } ) => {
                 </svg>
             </button>
             {showNotification ?
-                <div className="animate-bounce bg-white rounded-lg border-gray-300 border p-3 shadow-lg fixed top-10 md:top-10 right-0 md:right-10">
+                <div aria-label="notfication toast" className="animate-bounce bg-white rounded-lg border-gray-300 border p-3 shadow-lg fixed top-10 md:top-10 right-0 md:right-10">
                     <div className="flex flex-row">
                         <div className="px-2">
                             <svg width="24" height="24" viewBox="0 0 1792 1792" fill="#44C997" xmlns="http://www.w3.org/2000/svg">

@@ -34,7 +34,7 @@ export const masteringAudioModel = async ( scriptId, callback = {} ) => {
 
     } catch ( error ) {
         console.log( "error", error );
-        handleApiResponseError( error )
+        handleApiResponseError( "Something went wrong, could't create audio" );
     }
 
 

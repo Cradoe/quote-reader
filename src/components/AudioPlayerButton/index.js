@@ -42,7 +42,7 @@ const useAudio = url => {
 };
 
 
-const AudioPlayerButton = ( { url } ) => {
+const AudioPlayerButton = ( { url, quoteId } ) => {
     const [ player, togglePlayer ] = useAudio( url );
 
     useEffect( () => {
@@ -55,15 +55,15 @@ const AudioPlayerButton = ( { url } ) => {
         <>
 
 
-            <button onClick={togglePlayer} type="button" className="bg-white text-gray-900 dark:bg-gray-100 dark:text-gray-700 flex-none -my-2 mx-auto w-20 h-20 rounded-full ring-1 ring-gray-900/5 shadow-md flex items-center justify-center">
+            <button data-testid={`play-button-${quoteId}`} onClick={togglePlayer} type="button" className="bg-white text-gray-900 dark:bg-gray-100 dark:text-gray-700 flex-none -my-2 mx-auto w-20 h-20 rounded-full ring-1 ring-gray-900/5 shadow-md flex items-center justify-center">
 
                 {player.url === url && player.mode ?
-                    <svg className="" width="30" height="32" fill="currentColor">
+                    <svg data-testid="playing" className="" width="30" height="32" fill="currentColor">
                         <rect x="6" y="4" width="4" height="24" rx="2" />
                         <rect x="20" y="4" width="4" height="24" rx="2" />
                     </svg>
                     :
-                    <svg className="max-h-full max-w-ful" viewBox="0 0 1280.000000 1280.000000" >
+                    <svg data-testid="pause" className="max-h-full max-w-ful" viewBox="0 0 1280.000000 1280.000000" >
                         <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
                             fill="currentColor">
                             <path d="M4620 6400 c0 -2286 3 -2861 13 -2857 6 2 939 540 2072 1194 1133

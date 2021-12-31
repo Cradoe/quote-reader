@@ -42,7 +42,7 @@ const RandomQuotes = () => {
         <>
             {isFetching ?
                 <Loader /> :
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-10 ">
+                <div data-testid="shortlisted-quotes" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-10 ">
                     {
                         shortlistedQuotes.map( ( quote, index ) => (
                             <QuoteItemCard quote={quote} key={index} />

@@ -9,7 +9,7 @@ export default function ShareButton ( { content } ) {
     return (
         <Menu as="div" className="relative inline-block text-left">
             <div>
-                <Menu.Button className="px-4 py-2  text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
+                <Menu.Button aria-label="share widget" className="px-4 py-2  text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
                     <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px"><path d="M 23 3 A 4 4 0 0 0 19 7 A 4 4 0 0 0 19.09375 7.8359375 L 10.011719 12.376953 A 4 4 0 0 0 7 11 A 4 4 0 0 0 3 15 A 4 4 0 0 0 7 19 A 4 4 0 0 0 10.013672 17.625 L 19.089844 22.164062 A 4 4 0 0 0 19 23 A 4 4 0 0 0 23 27 A 4 4 0 0 0 27 23 A 4 4 0 0 0 23 19 A 4 4 0 0 0 19.986328 20.375 L 10.910156 15.835938 A 4 4 0 0 0 11 15 A 4 4 0 0 0 10.90625 14.166016 L 19.988281 9.625 A 4 4 0 0 0 23 11 A 4 4 0 0 0 27 7 A 4 4 0 0 0 23 3 z" /></svg>
                 </Menu.Button>
             </div >
@@ -30,6 +30,8 @@ export default function ShareButton ( { content } ) {
                                 <a
                                     target="_blank"
                                     rel="noreferrer"
+                                    role='share to whatsapp'
+                                    aria-label="share to whatsapp"
                                     href={`whatsapp://send?text=${content}`}
                                     className={classNames(
                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -48,6 +50,8 @@ export default function ShareButton ( { content } ) {
                                 <a
                                     target="_blank"
                                     rel="noreferrer"
+                                    role='share to whatsapp'
+                                    aria-label="share to whatsapp"
                                     href={`https://web.whatsapp.com/send?text=${content}`}
                                     className={classNames(
                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',

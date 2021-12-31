@@ -27,7 +27,7 @@ const CopyButton = ( { quote } ) => {
 
 
         <>
-            <button onClick={handleClick} type="button" aria-label="Add to favorites">
+            <button onClick={handleClick} data-testid={`copy-${quote._id}`} type="button" aria-label="Copy to clipboard">
                 <svg width="24" height="24" viewBox="0 0 64 64">
                     <path d="M53.9791489,9.1429005H50.010849c-0.0826988,0-0.1562004,0.0283995-0.2331009,0.0469999V5.0228
 		C49.7777481,2.253,47.4731483,0,44.6398468,0h-34.422596C7.3839517,0,5.0793519,2.253,5.0793519,5.0228v46.8432999

@@ -9,7 +9,7 @@ const QuoteItemBody = ( { quote } ) => {
                     <p className="text-cyan-500 dark:text-cyan-400 text-sm leading-6 capitalize">
                         {quote.tags.toString().replace( "-", " " )}
                     </p>
-                    <h2 className="text-gray-500 dark:text-gray-400 text-sm leading-6 truncate">
+                    <h2 aria-label="quote content" className="text-gray-500 dark:text-gray-400 text-sm leading-6 truncatde">
                         {quote.content}
                     </h2>
                     <p className="text-gray-900 dark:text-gray-50 text-lg">

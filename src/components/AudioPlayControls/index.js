@@ -9,9 +9,6 @@ import { masteringAudioModel } from "../../models/masteringAudioModel";
 
 
 
-
-
-
 const AudioPlayControls = ( { content, id: quoteId } ) => {
 
     const createdScripts = useSelector( state => state.audio && state.audio.scripts ? state.audio.scripts : null ),
@@ -90,9 +87,9 @@ const AudioPlayControls = ( { content, id: quoteId } ) => {
     return (
         <>
             {loadedAudio ?
-                <AudioPlayerButton url={loadedAudio} />
+                <AudioPlayerButton quoteId={quoteId} url={loadedAudio} />
                 :
-                <LoadAudioButton onClick={createAndLoadAudio} />
+                <LoadAudioButton quoteId={quoteId} onClick={createAndLoadAudio} />
             }
         </>
 

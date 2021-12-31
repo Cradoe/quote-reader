@@ -55,7 +55,7 @@ const AudioPlayerButton = ( { url } ) => {
         <>
 
 
-            <button onClick={togglePlayer} type="button" className="bg-white text-gray-900 dark:bg-gray-100 dark:text-gray-700 flex-none -my-2 mx-auto w-20 h-20 rounded-full ring-1 ring-gray-900/5 shadow-md flex items-center justify-center" aria-label="Pause">
+            <button onClick={togglePlayer} type="button" className="bg-white text-gray-900 dark:bg-gray-100 dark:text-gray-700 flex-none -my-2 mx-auto w-20 h-20 rounded-full ring-1 ring-gray-900/5 shadow-md flex items-center justify-center">
 
                 {player.url === url && player.mode ?
                     <svg className="" width="30" height="32" fill="currentColor">

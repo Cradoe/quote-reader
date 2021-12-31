@@ -44,7 +44,7 @@ const TagGrid = () => {
 
                 <Loader />
                 :
-                <div className="flex flex-wrap gap-4 text-center justify-center">
+                <div className="flex flex-wrap gap-2 gap-y-6  justify-center">
                     {
                         tags.map( ( tag, index ) => (
                             <TagItem tag={tag} key={index} />

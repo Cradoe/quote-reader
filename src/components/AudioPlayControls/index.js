@@ -73,7 +73,6 @@ const AudioPlayControls = ( { content, id: quoteId } ) => {
         if ( speech && !loadedAudio ) {
             const
                 successCallback = ( data ) => {
-                    console.log( " data.url", data.url );
                     setLoadedAudio( data.url );
                 },
                 errorCallback = ( error ) => {

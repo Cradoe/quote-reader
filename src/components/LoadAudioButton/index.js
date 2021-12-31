@@ -1,6 +1,6 @@
 const LoadAudioButton = ( { onClick } ) => {
     return (
-        <button onClick={onClick} type="button" className="focus:animate-spin bg-white text-gray-900 dark:bg-gray-100 dark:text-gray-700 flex-none -my-2 mx-auto w-20 h-20 rounded-full ring-1 ring-gray-900/5 shadow-md flex items-center justify-center" aria-label="Pause">
+        <button onClick={onClick} type="button" className="focus:animate-spin bg-white text-gray-900 dark:bg-gray-100 dark:text-gray-700 flex-none -my-2 mx-auto w-20 h-20 rounded-full ring-1 ring-gray-900/5 shadow-md flex items-center justify-center focus:outline-none">
             <svg className="max-h-full max-w-ful" viewBox="0 0 1280.000000 1280.000000" >
                 <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
                     fill="currentColor">

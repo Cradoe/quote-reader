@@ -1,6 +1,6 @@
 import { Link } from "@reach/router";
 import React from "react";
-import { Zoom } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { globalConstants } from "../../../constants/global";
 import { homeHeroImg } from "../../../utils/sharedAssets";
 import HomeHeader from "../HomeHeader";
@@ -24,10 +24,15 @@ const HeaderSection = () => {
                     <HomeHeader />
 
                     <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                        <div className="sm:text-center lg:text-left">
+                        <div className="sm:text-center lg:text-left relative overflow-x-hidden">
                             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                                <span className="block xl:inline">Quotes to uplift your</span>{' '}
-                                <span className="block text-indigo-600 xl:inline">everyday morals</span>
+                                <Fade direction='left'>
+                                    <span className="block xl:inline">Quotes to uplift your</span>
+                                </Fade>
+                                {' '}
+                                <Fade direction='right'>
+                                    <span className="block text-indigo-600 xl:inline">everyday morals</span>
+                                </Fade>
                             </h1>
                             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
@@ -58,13 +63,13 @@ const HeaderSection = () => {
                 </div>
             </div>
             <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 hidden md:block">
-                <Zoom className="h-full">
+                <Fade className="h-full">
                     <img
                         className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
                         src={homeHeroImg}
                         alt="Hero"
                     />
-                </Zoom>
+                </Fade>
             </div>
         </div>
     )

@@ -10,8 +10,8 @@ const Footer = () => {
                     </Link>
                     <div className="flex gap-4 text-gray-500">
                         <p>Credit:</p>
-                        <a href="https://github.com/lukePeavey/quotable" className="underline" target="_blank" rel="noreferrer">Quote API</a>
-                        <a href="htpps://api.audio" className="underline" target="_blank" rel="noreferrer">Audio.API</a>
+                        <a href="https://github.com/lukePeavey/quotable" className="underline" target="_blank" rel="noreferrer">Quotable </a>
+                        <a href="htpps://api.audio" className="underline" target="_blank" rel="noreferrer">API.Audio</a>
                     </div>
                     <p className="mt-6 text-xs lg:text-sm leading-none text-gray-50">{new Date().getFullYear()} Quote Reader. All Rights Reserved.</p>
                 </div>
